@@ -18,8 +18,8 @@ private:
 public:
     // constructors
     Camper();
-    Camper(const string& name, const string& plate_number, 
-    int& num_people, Date& check_in, Date& check_out);
+    Camper(const string &name, const string &plate_number,
+           int &num_people, Date &check_in, Date &check_out);
 
     // getters
     string getName();
@@ -29,20 +29,17 @@ public:
     Date getCheckOut();
 
     // setters
-    void setName();
-    void setPlateNumber();
-    bool setNumPeople();
-    bool setCheckIn();
-    bool setCheckOut();
-    
+    void setName(const string &name);
+    void setPlateNumber(const string &plate_number);
+    void setNumPeople(int &num_people);
+    void setCheckIn(Date &check_in);
+    void setCheckOut(Date &check_out);
+
     // other functions
-    bool is_num_people_valid(int& num_people);
-    bool are_dates_valid(Date& check_in, Date& check_out);
+    bool is_num_people_valid(int &num_people);
+    bool are_dates_valid(Date &check_in, Date &check_out);
 
     void print();
-
 };
-
-
 
 #endif

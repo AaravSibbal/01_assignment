@@ -1,7 +1,31 @@
-#include "Date.h"
 #include "Camper.h"
 
 using namespace std;
+
+/**
+ * constructors
+ */
+
+Camper::Camper()
+{
+    Date check_in_date = Date();
+    Date check_out_date = Date(1901, 1, 5);
+
+    this->name = "john smith";
+    this->plate_number = "abcd1234";
+    this->num_people = 1;
+    this->check_in = check_in_date;
+    this->check_out = check_out_date;
+}
+
+Camper::Camper(const string &name, const string &plate_number, int &num_people,
+               Date &checkin, Date &check_out){
+                this->name = name;
+                this->plate_number = plate_number;
+                setNumPeople(num_people);
+                setCheckIn(check_in);
+                setCheckOut(check_out);
+}
 
 /**
  * getters
@@ -31,6 +55,55 @@ Date Camper::getCheckOut()
     return check_out;
 }
 
+/**
+ * setters
+ */
+
+void Camper::setName(const string &name)
+{
+    this->name = name;
+}
+
+void Camper::setPlateNumber(const string &plate_number)
+{
+    this->plate_number = plate_number;
+}
+
+void Camper::setNumPeople(int &num_people)
+{
+    if (num_people < 1)
+    {
+        throw invalid_argument("number of people can't be less than 1");
+    }
+
+    this->num_people = num_people;
+}
+
+void Camper::setCheckIn(Date &check_in)
+{
+    if (check_in.lessThan(check_out))
+    {
+        this->check_in = check_in;
+        return;
+    }
+
+    throw invalid_argument("check in date is more than check out");
+}
+
+void Camper::setCheckOut(Date &check_out)
+{
+    if (!check_out.lessThan(check_in))
+    {
+        this->check_out = check_out;
+        return;
+    }
+
+    throw invalid_argument("check out date is less than check in");
+}
+
+/**
+ * other functions
+ */
 void Camper::print()
 {
     cout << "Camper Info: " << endl;
