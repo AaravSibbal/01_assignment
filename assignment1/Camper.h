@@ -36,6 +36,7 @@ public:
     void setCheckOut(Date &check_out);
 
     // other functions
+    // TODO: implement the functions below
     bool is_num_people_valid(int &num_people);
     bool are_dates_valid(Date &check_in, Date &check_out);
 
