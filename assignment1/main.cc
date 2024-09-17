@@ -4,6 +4,8 @@
 #include "Category.h"
 #include "Date.h"
 #include "Tester.h"
+#include "Camper.h"
+#include "Campsite.h"
 
 
 using namespace std;
@@ -198,7 +200,7 @@ int testPrintCampsites(){
 
 int testCampsiteAddCampers(){
     cout<<"test Campsite add, remove, and print Campers"<<endl;
-    Campsite campsite(1, tent, "Lakeside", 1, 100);
+    Campsite campsite(1, tent, "Lakeside", 5, 100);
 
     string names[5] = {"Alice", "Bob", "Charlie", "Dave", "Eve"};
     string plates[5] = {"AAA", "BBB", "CCC", "DDD", "EEE"};
@@ -550,4 +552,3 @@ int cgTestPrintCampers(){
     return score;
 
 }
-
