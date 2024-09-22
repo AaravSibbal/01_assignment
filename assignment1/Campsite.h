@@ -18,7 +18,7 @@ private:
     string description;
     int max_people;
     double price_per_day;
-    int no_of_campers;
+    int camper_arr_len;
     Camper campers_arr[MAX_ARRAY];
 
     void removeElem(int& idx);
@@ -58,7 +58,13 @@ public:
      */
 
     bool addCamper(const string& name, const string& plate_number, int& num_people,Date& check_in, Date& check_out);
+    void removeElem(int& idx);
+    bool addElem(int& idx, Camper& c);
+    void setElem(int& idx, Camper& c);
+    Camper getElem(int& idx);
+    bool isIdxValid(int& idx);
     bool removeCamper(const string& name);
+    int findCamperIdx(Camper& c);
     void print();
     void printCampers();
     void printCamper(Date& date);
