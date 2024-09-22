@@ -18,8 +18,8 @@ Camper::Camper()
     this->check_out = check_out_date;
 }
 
-Camper::Camper(const string &name, const string &plate_number, int &num_people,
-               Date &checkin, Date &check_out){
+Camper::Camper(const string& name, const string& plate_number, int& num_people,
+               Date& checkin, Date& check_out){
                 this->name = name;
                 this->plate_number = plate_number;
                 setNumPeople(num_people);
@@ -59,17 +59,17 @@ Date Camper::getCheckOut()
  * setters
  */
 
-void Camper::setName(const string &name)
+void Camper::setName(const string& name)
 {
     this->name = name;
 }
 
-void Camper::setPlateNumber(const string &plate_number)
+void Camper::setPlateNumber(const string& plate_number)
 {
     this->plate_number = plate_number;
 }
 
-void Camper::setNumPeople(int &num_people)
+void Camper::setNumPeople(int& num_people)
 {
     if (num_people < 1)
     {
@@ -79,7 +79,7 @@ void Camper::setNumPeople(int &num_people)
     this->num_people = num_people;
 }
 
-void Camper::setCheckIn(Date &check_in)
+void Camper::setCheckIn(Date& check_in)
 {
     if (check_in.lessThan(check_out))
     {
@@ -90,7 +90,7 @@ void Camper::setCheckIn(Date &check_in)
     throw invalid_argument("check in date is more than check out");
 }
 
-void Camper::setCheckOut(Date &check_out)
+void Camper::setCheckOut(Date& check_out)
 {
     if (!check_out.lessThan(check_in))
     {

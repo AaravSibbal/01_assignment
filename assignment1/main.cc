@@ -200,7 +200,7 @@ int testPrintCampsites(){
 
 int testCampsiteAddCampers(){
     cout<<"test Campsite add, remove, and print Campers"<<endl;
-    Campsite campsite(1, tent, "Lakeside", 5, 100);
+    Campsite campsite = Campsite(1, tent, "Lakeside", 5, (double)100);
 
     string names[5] = {"Alice", "Bob", "Charlie", "Dave", "Eve"};
     string plates[5] = {"AAA", "BBB", "CCC", "DDD", "EEE"};

@@ -30,7 +30,7 @@ public:
      */
 
     Campsite();
-    Campsite(int& site_number, cat::Category& Category, const string& description, int& max_people, double& price_per_day);
+    Campsite(int site_number, cat::Category Category, const string description, int max_people, double price_per_day);
     
     
     /**

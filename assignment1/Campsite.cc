@@ -1,5 +1,4 @@
 #include "Campsite.h"
-#include <optional>
 
 /**
  * Contructors
@@ -14,7 +13,7 @@ Campsite::Campsite(){
     camper_arr_len = 0;
 }
 
-Campsite::Campsite(int& site_number, cat::Category& Category, const string& description, int& max_people, double& price_per_day){
+Campsite::Campsite(int site_number, cat::Category Category, const string description, int max_people, double price_per_day){
             this->site_number = site_number;
             this->Category = Category;
             this->description = description;
