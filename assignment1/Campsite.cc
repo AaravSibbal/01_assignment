@@ -131,7 +131,7 @@ bool Campsite::addCamper(const string& name, const string& plate_number,
         return true;  
 }
 
-bool Campsite::removeCamper(const string& name){
+void Campsite::removeCamper(const string& name){
     int idx = -1;
     
     for(int i=0; i<camper_arr_len; ++i){
@@ -141,12 +141,11 @@ bool Campsite::removeCamper(const string& name){
     }
 
     if(idx == -1){
-        return false;
+        cout<<"Error: Remove camper operation failed, The camper by the name: "<<name<<" does not exist."<<endl;
     }
 
     removeElem(idx);
-
-    return true;
+    cout<<"Remove camper operation was successfull"<<endl;
 }
 /**
  * we are checking at each element for:
@@ -179,7 +178,7 @@ int Campsite::findCamperIdx(Camper& c){
     return camper_arr_len;
 }
 
-bool isValidRange(Date& check_in, Date& check_out, Date& temp_check_in, Date& temp_check_out){
+bool Campsite::isValidRange(Date& check_in, Date& check_out, Date& temp_check_in, Date& temp_check_out){
     if(temp_check_in.lessThan(check_in) && check_in.lessThan(temp_check_out)){
         return false;
     }

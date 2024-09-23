@@ -22,6 +22,11 @@ private:
     Camper campers_arr[MAX_ARRAY];
 
     void removeElem(int& idx);
+    bool addElem(int& idx, Camper& c);
+    void setElem(int& idx, Camper& c);
+    Camper getElem(int& idx);
+    bool isIdxValid(int& idx);
+    bool isValidRange(Date &check_in, Date &check_out, Date &temp_check_in, Date &temp_check_out);
     /* data */
 public:
     
@@ -58,12 +63,7 @@ public:
      */
 
     bool addCamper(const string& name, const string& plate_number, int& num_people,Date& check_in, Date& check_out);
-    void removeElem(int& idx);
-    bool addElem(int& idx, Camper& c);
-    void setElem(int& idx, Camper& c);
-    Camper getElem(int& idx);
-    bool isIdxValid(int& idx);
-    bool removeCamper(const string& name);
+    void removeCamper(const string& name);
     int findCamperIdx(Camper& c);
     void print();
     void printCampers();
