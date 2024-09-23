@@ -11,6 +11,7 @@ Campsite::Campsite(){
     max_people = 1;
     price_per_day = 20;
     camper_arr_len = 0;
+    Camper campers_arr[MAX_ARRAY];
 }
 
 Campsite::Campsite(int site_number, cat::Category Category, const string description, int max_people, double price_per_day){
@@ -79,7 +80,7 @@ void Campsite::print(){
     cout<<"Category: "<<cat::categoryToString(Category)<<endl;
     cout<<"Description: "<<description<<endl;
     cout<<"Max People: "<<max_people<<endl;
-    cout<<"Price Per Day: "<<price_per_day<<endl;
+    cout<<"Price Per Day: $"<<fixed<<setprecision(2)<<price_per_day<<endl;
 }
 
 void Campsite::printCampers(){
@@ -131,7 +132,7 @@ bool Campsite::addCamper(const string& name, const string& plate_number,
         return true;  
 }
 
-void Campsite::removeCamper(const string& name){
+void Campsite::removeCamper(string name){
     int idx = -1;
     
     for(int i=0; i<camper_arr_len; ++i){

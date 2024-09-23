@@ -63,7 +63,7 @@ public:
      */
 
     bool addCamper(const string& name, const string& plate_number, int& num_people,Date& check_in, Date& check_out);
-    void removeCamper(const string& name);
+    void removeCamper(string name);
     int findCamperIdx(Camper& c);
     void print();
     void printCampers();

@@ -1,17 +1,12 @@
 #include <iostream>
 #include <random>
 #include <sstream>
-#include "Category.h"
-#include "Date.h"
-#include "Tester.h"
-#include "Camper.h"
-#include "Campsite.h"
 #include "Campground.h"
+#include "Tester.h"
 
 
 using namespace std;
 using namespace cat;
-
 // unit tests for Campers and Campsites
 int testPrintCampers();
 int testPrintCampsites();
@@ -29,6 +24,7 @@ int main(){
         std::cout<<" Unit tests for Campers and Campsites:"<<endl;
         
         std::cout<<" 1. [4 marks] Test print Campers"<<endl;
+
         std::cout<<" 2. [3 marks] Test print Campsites"<<endl;
         std::cout<<" 3. [7 marks] Test Campsite add, remove, and print Campers"<<endl;
         std::cout<<endl<<" Campground tests:"<<endl;
@@ -201,7 +197,7 @@ int testPrintCampsites(){
 
 int testCampsiteAddCampers(){
     cout<<"test Campsite add, remove, and print Campers"<<endl;
-    Campsite campsite(1, tent, "Lakeside", 1, 100);
+    Campsite campsite(1, tent, "Lakeside", 5, 100);
 
     string names[5] = {"Alice", "Bob", "Charlie", "Dave", "Eve"};
     string plates[5] = {"AAA", "BBB", "CCC", "DDD", "EEE"};
@@ -419,9 +415,9 @@ int cgTestPrintCampers(){
     Campground campground;
     cout<<endl<<"campground testPrintCampers"<<endl;
 
-    campground.addCampsite(1, tent, "Lakeside", 1, 100);
-    campground.addCampsite(2, rv_site, "Mountain View", 2, 200);
-    campground.addCampsite(3, cabin, "Forest", 3, 300);
+    campground.addCampsite(1, tent, "Lakeside", 5, 100);
+    campground.addCampsite(2, rv_site, "Mountain View", 5, 200);
+    campground.addCampsite(3, cabin, "Forest", 5, 300);
 
     string names[5] = {"Alice", "Bob", "Charlie", "Dave", "Eve"};
     string plates[5] = {"AAA", "BBB", "CCC", "DDD", "EEE"};

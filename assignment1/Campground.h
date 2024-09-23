@@ -12,6 +12,12 @@ class Campground{
         int campsite_arr_len;
         void removeElem(int& idx);
     public:
+
+        /**
+         * contructors
+         */
+
+        Campground();
         /**
          * print functions
          */

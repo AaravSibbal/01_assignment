@@ -1,5 +1,9 @@
 #include "Campground.h"
 
+Campground::Campground(){
+    Campsite campsite_arr[MAX_ARRAY];
+    campsite_arr_len = 0;
+}
 
 /**
  * print functions
@@ -33,7 +37,11 @@ void Campground::printCampsitesByCategory(cat::Category Category){
 }
 
 void Campground::printCampers(Date& date){
+
     // TODO: make this function
+    for(int i=0; i<campsite_arr_len; i++){
+        campsite_arr[i].printCamper(date);
+    }
 }
 
 /**

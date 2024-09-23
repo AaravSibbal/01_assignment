@@ -112,17 +112,28 @@ bool Date::equals(Date &d)
 
 bool Date::lessThan(Date &d)
 {
-	int days1 = this->convertToDays();
-	int days2 = d.convertToDays();
-
-	/**
-	 * if days 1 is less than days 2
-	 */
-	if (days1 < days2)
-	{
+	if(year < d.year){
 		return true;
+	}else if(year > d.year){
+		return false;
+	}else{
+		// years are equal
+		if(month < d.month){
+			return true;
+		}else if(month > d.month){
+			return false;
+		}else{
+			// months are also equal
+			if(day < d.day){
+				return true;
+			}else if(day > d.day){
+				return false;
+			}else{
+				return false;
+			}
+		}
 	}
-	return false;
+
 }
 
 // int Date::daysUntil(Date& d){

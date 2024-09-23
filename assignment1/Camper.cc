@@ -19,12 +19,12 @@ Camper::Camper()
 }
 
 Camper::Camper(const string& name, const string& plate_number, int& num_people,
-               Date& checkin, Date& check_out){
+               Date& check_in, Date& check_out){
                 this->name = name;
                 this->plate_number = plate_number;
-                setNumPeople(num_people);
-                setCheckIn(check_in);
-                setCheckOut(check_out);
+                this->check_in = check_in;
+                this->check_out = check_out;
+                this->num_people = num_people;
 }
 
 /**
@@ -73,43 +73,30 @@ void Camper::setNumPeople(int& num_people)
 {
     if (num_people < 1)
     {
-        throw invalid_argument("number of people can't be less than 1");
+        cout<<"number of people can't be less than 1"<<endl;
+        return;
     }
 
     this->num_people = num_people;
 }
 
-void Camper::setCheckIn(Date& check_in)
-{
-    if (check_in.lessThan(check_out))
-    {
-        this->check_in = check_in;
-        return;
-    }
-
-    throw invalid_argument("check in date is more than check out");
+void Camper::setCheckIn(Date& check_in){
+    this->check_in = check_in;
 }
 
-void Camper::setCheckOut(Date& check_out)
-{
-    if (!check_out.lessThan(check_in))
-    {
+void Camper::setCheckOut(Date& check_out){
         this->check_out = check_out;
-        return;
-    }
-
-    throw invalid_argument("check out date is less than check in");
 }
 
 /**
- * other functions
+ * print function
  */
 void Camper::print()
 {
     cout << "Camper Info: " << endl;
     cout << "Name: " << name << endl;
     cout << "Number Plate: " << plate_number << endl;
-    cout << "Number of People" << num_people << endl;
+    cout << "Number of People: " << num_people << endl;
     cout << "Check in: ";
     check_in.print();
     cout << "Check out: ";
